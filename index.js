@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 
 app.post('/api', async (req, res) => {
     const userData = req.body;
-    console.log(userData)
     try{
         const apiRes = await axios.post('http://challenge-react.alkemy.org/', { email: userData.email, password: userData.password });
         res.status(200).send(apiRes.data);
