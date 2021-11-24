@@ -8,7 +8,11 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-app.post('/', async (req, res) => {
+app.get('/', (req, res) => {
+    res.send('Welcome to this API proxy. This is meant to solve an http/https issue when consulting an API for a dev challenge')
+})
+
+app.post('/api', async (req, res) => {
     const userData = req.body;
     console.log(userData)
     try{
